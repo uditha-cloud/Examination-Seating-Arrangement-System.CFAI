@@ -1,0 +1,38 @@
+# Examination Seating Arrangement System
+
+students = [
+    "Aarav", "Aditi", "Akash", "Ananya", "Arjun", "Bhavana",
+    "Charan", "Deepika", "Dheeraj", "Divya", "Goutham",
+    "Harsha", "Ishika", "Jahnavi", "Karthik", "Keerthana",
+    "Lokesh", "Manasa", "Nandini", "Nikhil", "Pavan",
+    "Pranavi", "Rahul", "Rakesh", "Sai Teja", "Sanjana",
+    "Shreya", "Sravani", "Tejaswini", "Varun", "Venkat",
+    "Vishnu", "Yash"
+]
+
+rows = 6
+cols = 6
+
+total_seats = rows * cols
+total_students = len(students)
+
+print("\n========== EXAMINATION SEATING ARRANGEMENT ==========\n")
+
+seat_no = 1
+student_index = 0
+
+for i in range(rows):
+    for j in range(cols):
+        if student_index < total_students:
+            print(f"Seat-{seat_no:02d}: {students[student_index]:<12}", end="  ")
+            student_index += 1
+        else:
+            print(f"Seat-{seat_no:02d}: Empty       ", end="  ")
+        seat_no += 1
+    print("\n")
+
+print("====================================================")
+print("Total Students :", total_students)
+print("Total Seats    :", total_seats)
+print("Vacant Seats   :", total_seats - total_students)
+print("====================================================")
